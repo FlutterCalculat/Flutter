@@ -1,10 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:adder/screen/addition_screen.dart';
-import 'package:adder/screen/division_screen.dart';
-import 'package:adder/screen/multiplication_screen.dart';
-import 'package:adder/screen/subtraction_screen.dart';
+import 'package:adder/addition/screen/addition_screen.dart';
+import 'package:adder/divistion/screen/division_screen.dart';
+import 'package:adder/multiplication/screen/multiplication_screen.dart';
+import 'package:adder/subtraction/screen/subtraction_screen.dart';
 
 
 class BottomNavigationBarExample extends StatefulWidget {

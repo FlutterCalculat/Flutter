@@ -1,4 +1,4 @@
-import 'package:adder/screen/splash_screen.dart';
+import 'package:adder/etc_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
