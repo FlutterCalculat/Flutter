@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       child: Center(
         child: Padding(
-            padding: EdgeInsets.only(top: 60.0),
+            padding: EdgeInsets.only(top: 20),
             child: Text("$name의 $type", style: TextStyle(fontSize: 24))),
       ),
     );
