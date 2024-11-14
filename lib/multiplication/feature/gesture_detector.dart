@@ -13,6 +13,8 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
   bool isFirstDoubleTap = false; // 첫 번째 더블탭 여부 추적
   bool isMultiplied = false; // 두 숫자를 곱했는지 추적
   double _dragStartX = 0.0; // 드래그 시작 지점 X 좌표
+  bool isIncreasingFirstCounter = false; // 첫 번째 카운터가 증가 중인지 추적
+  bool isIncreasingSecondCounter = false; // 두 번째 카운터가 증가 중인지 추적
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +24,22 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
           // 첫 번째 더블탭 후 두 번째 카운터 증가
           setState(() {
             _second_counter += 1; // 두 번째 카운터 증가
+            isIncreasingSecondCounter = true; // 두 번째 카운터가 증가 중임을 표시
+            isIncreasingFirstCounter = false; // 첫 번째 카운터는 증가 중 아님
           });
         } else if (isMultiplied) {
           // 두 숫자를 곱했을 때 더블탭 후에는 첫 번째 카운터 증가
           setState(() {
             _first_counter += 1; // 첫 번째 카운터 증가
+            isIncreasingFirstCounter = true; // 첫 번째 카운터가 증가 중임을 표시
+            isIncreasingSecondCounter = false; // 두 번째 카운터는 증가 중 아님
           });
         } else {
           // 더블탭 전에는 첫 번째 카운터만 증가
           setState(() {
             _first_counter += 1;
+            isIncreasingFirstCounter = true; // 첫 번째 카운터가 증가 중임을 표시
+            isIncreasingSecondCounter = false; // 두 번째 카운터는 증가 중 아님
           });
         }
       },
@@ -53,16 +61,17 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
         _dragStartX = details.localPosition.dx;
       },
       onHorizontalDragUpdate: (details) {
-        // 드래그 방향에 따라 숫자를 양수 또는 음수로 설정
+        // 드래그 방향에 따라 음수 적용
         setState(() {
-          if (details.localPosition.dx > _dragStartX) {
-            // 오른쪽으로 드래그 시 음수로 설정
-            _first_counter = -_first_counter.abs();
-            _second_counter = -_second_counter.abs();
-          } else if (details.localPosition.dx < _dragStartX) {
-            // 왼쪽으로 드래그 시 양수로 설정
-            _first_counter = _first_counter.abs();
-            _second_counter = _second_counter.abs();
+          if (details.localPosition.dx < _dragStartX) {
+            // 왼쪽으로 드래그 시, 현재 증가 중인 카운터에 음수 적용
+            if (isIncreasingFirstCounter) {
+              // 첫 번째 카운터가 증가 중일 때 음수 적용
+              _first_counter = _first_counter * -1;
+            } else if (isIncreasingSecondCounter) {
+              // 두 번째 카운터가 증가 중일 때 음수 적용
+              _second_counter = _second_counter * -1;
+            }
           }
         });
       },
