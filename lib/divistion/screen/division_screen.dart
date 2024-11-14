@@ -1,4 +1,5 @@
 
+import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class DivisionScreen extends StatelessWidget {
@@ -6,10 +7,7 @@ class DivisionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('노영재의 나눗셈'),
-      ),
+      appBar: CustomAppBar(name: "노영재", type: "나눗셈"),
       body: Center(
         child: Text(
           'Welcome to the Home Screen!',

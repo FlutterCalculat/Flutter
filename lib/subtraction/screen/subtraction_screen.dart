@@ -1,3 +1,4 @@
+import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class SubtractionScreen extends StatelessWidget {
@@ -5,9 +6,9 @@ class SubtractionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('임금의 뺄셈'),
+      appBar: CustomAppBar(
+        name: "임금",
+        type: "뺄셈",
       ),
       body: Center(
         child: Text(

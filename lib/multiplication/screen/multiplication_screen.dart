@@ -1,5 +1,6 @@
 
 
+import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class MultiplicationScreen extends StatelessWidget {
@@ -7,10 +8,7 @@ class MultiplicationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('한준혁의 곱셈'),
-      ),
+      appBar: CustomAppBar(name: "한준혁", type: "곱셈"),
       body: Center(
         child: Text(
           'Welcome to the Home Screen!',
