@@ -20,7 +20,17 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (isFirstDoubleTap && !isMultiplied) {
+        if (isMultiplied) {
+          // 두 숫자를 곱한 후 탭을 하면 모든 값을 초기화
+          setState(() {
+            _first_counter = 0;
+            _second_counter = 0;
+            isFirstDoubleTap = false;
+            isMultiplied = false;
+            isIncreasingFirstCounter = false;
+            isIncreasingSecondCounter = false;
+          });
+        } else if (isFirstDoubleTap && !isMultiplied) {
           // 첫 번째 더블탭 후 두 번째 카운터 증가
           setState(() {
             _second_counter += 1; // 두 번째 카운터 증가
