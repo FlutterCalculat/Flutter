@@ -12,6 +12,8 @@
 .buildlog/
 .history
 .svn/
+.dart_tool/
+.idea/
 
 # IntelliJ related
 *.iml
