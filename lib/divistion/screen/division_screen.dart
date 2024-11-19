@@ -1,8 +1,8 @@
 import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:adder/view/custom_app_bar.dart';
-import 'package:flutter/material.dart';
+// import 'package:adder/view/custom_app_bar.dart';
+// import 'package:flutter/material.dart';
 
 List<int> arr = [0, 0]; // 전역 리스트
 
@@ -21,6 +21,14 @@ class _DivisionScreenState extends State<DivisionScreen> {
         child: Column(
           children: [
             // arr 값을 텍스트로 표시
+            Container(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: test('${arr[0] / arr[1]}'),
+                ),
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -32,7 +40,7 @@ class _DivisionScreenState extends State<DivisionScreen> {
                   '${arr[1]}=',
                   style: TextStyle(fontSize: 20),
                 ),
-                Text('${arr[0]/arr[1]}')
+                Text('${arr[0] / arr[1]}')
               ],
             ),
             SizedBox(height: 20),
@@ -74,8 +82,7 @@ class _DivisionScreenState extends State<DivisionScreen> {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                content: Text("결과: ${arr[0] / arr[1] / 2}")
-                              );
+                                  content: Text("결과: ${arr[0] / arr[1] / 2}"));
                             },
                           );
                         }
@@ -103,6 +110,50 @@ class _DivisionScreenState extends State<DivisionScreen> {
         arr = [number, 0]; // 초기화 후 첫 번째 값 설정
       }
     });
+  }
+
+  List<Widget> test(String number) {
+    List<Widget> result = [];
+
+    double width = 100;
+    double height = 100;
+
+    for (int i = 0; i < number.length; i++) {
+      if (number[i] == '0') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '1') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));      }
+      if (number[i] == '2') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '3') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '4') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '5') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '6') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '7') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '8') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '9') {
+        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
+      }
+      if (number[i] == '.') {
+        result.add(Image.asset('assets/image/dart.jpg', width: 50, height: 50,));
+      }
+    }
+
+    return result;
   }
 }
 
