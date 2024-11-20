@@ -1,10 +1,10 @@
 import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:adder/view/custom_app_bar.dart';
-// import 'package:flutter/material.dart';
-
-List<int> arr = [0, 0]; // 전역 리스트
+List<int> arr = []; // 전역 리스트
+String check = "";
+String show = "";
+double result = 0.0;
 
 class DivisionScreen extends StatefulWidget {
   @override
@@ -19,28 +19,19 @@ class _DivisionScreenState extends State<DivisionScreen> {
       appBar: CustomAppBar(name: "노영재", type: "나눗셈"),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // arr 값을 텍스트로 표시
-            Container(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: test('${arr[0] / arr[1]}'),
-                ),
-              ),
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  '${arr[0]}/',
-                  style: TextStyle(fontSize: 20),
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: test('$result'),
+                    ),
+                  ),
                 ),
-                Text(
-                  '${arr[1]}=',
-                  style: TextStyle(fontSize: 20),
-                ),
-                Text('${arr[0] / arr[1]}')
               ],
             ),
             SizedBox(height: 20),
@@ -51,23 +42,23 @@ class _DivisionScreenState extends State<DivisionScreen> {
                   children: [
                     Row(
                       children: [
-                        NumberButton(number: 7, onPressed: updateState),
-                        NumberButton(number: 8, onPressed: updateState),
-                        NumberButton(number: 9, onPressed: updateState),
+                        NumberButton(number: 7, onPressed: makeNumber),
+                        NumberButton(number: 8, onPressed: makeNumber),
+                        NumberButton(number: 9, onPressed: makeNumber),
                       ],
                     ),
                     Row(
                       children: [
-                        NumberButton(number: 4, onPressed: updateState),
-                        NumberButton(number: 5, onPressed: updateState),
-                        NumberButton(number: 6, onPressed: updateState),
+                        NumberButton(number: 4, onPressed: makeNumber),
+                        NumberButton(number: 5, onPressed: makeNumber),
+                        NumberButton(number: 6, onPressed: makeNumber),
                       ],
                     ),
                     Row(
                       children: [
-                        NumberButton(number: 1, onPressed: updateState),
-                        NumberButton(number: 2, onPressed: updateState),
-                        NumberButton(number: 3, onPressed: updateState),
+                        NumberButton(number: 1, onPressed: makeNumber),
+                        NumberButton(number: 2, onPressed: makeNumber),
+                        NumberButton(number: 3, onPressed: makeNumber),
                       ],
                     ),
                   ],
@@ -77,18 +68,38 @@ class _DivisionScreenState extends State<DivisionScreen> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        if (arr[0] / arr[1] > 0) {
+                        if (check.isNotEmpty) {
+                          setState(() {
+                            arr.add(int.parse(check));
+                            check = "";
+                            show += "/";
+                          });
+                        }
+                      },
+                      child: Text("/"),
+                    ),
+                    TextButton(
+                      onPressed: calculate,
+                      child: Text("="),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        if (result > 0) {
                           showDialog(
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                  content: Text("결과: ${arr[0] / arr[1] / 2}"));
+                                content: Text("결과: ${result / 2}"),
+                              );
                             },
                           );
                         }
                       },
-                      child: Text("반으로 나누기"),
-                    )
+                      child: Text(
+                        "반으로\n나누기",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ],
                 )
               ],
@@ -99,57 +110,58 @@ class _DivisionScreenState extends State<DivisionScreen> {
     );
   }
 
-  // 상태 업데이트 함수
-  void updateState(int number) {
+  void makeNumber(int number) {
     setState(() {
-      if (arr[0] == 0) {
-        arr[0] = number;
-      } else if (arr[1] == 0) {
-        arr[1] = number;
-      } else {
-        arr = [number, 0]; // 초기화 후 첫 번째 값 설정
-      }
+      check += number.toString();
+      show += number.toString();
     });
+  }
+
+  void calculate() {
+    if (check.isNotEmpty) {
+      arr.add(int.parse(check));
+    }
+
+    if (arr.isNotEmpty) {
+      double a = arr[0].toDouble();
+      for (int i = 1; i < arr.length; i++) {
+        if (arr[i] == 0) {
+          // 0으로 나눌 경우 예외 처리
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                content: Text("0으로 나눌 수 없습니다."),
+              );
+            },
+          );
+          return;
+        }
+        a = a / arr[i];
+      }
+      setState(() {
+        result = a;
+        show = "";
+        check = "";
+        arr.clear();
+      });
+    }
   }
 
   List<Widget> test(String number) {
     List<Widget> result = [];
-
     double width = 100;
     double height = 100;
 
     for (int i = 0; i < number.length; i++) {
-      if (number[i] == '0') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '1') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));      }
-      if (number[i] == '2') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '3') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '4') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '5') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '6') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '7') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '8') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
-      if (number[i] == '9') {
-        result.add(Image.asset('assets/image/${number[i]}.jpg', width: width, height: height,));
-      }
       if (number[i] == '.') {
-        result.add(Image.asset('assets/image/dart.jpg', width: 50, height: 50,));
+        result.add(Image.asset('assets/image/dot.jpg', width: 50, height: 50));
+      } else if ('0123456789'.contains(number[i])) {
+        result.add(Image.asset(
+          'assets/image/${number[i]}.jpg',
+          width: width,
+          height: height,
+        ));
       }
     }
 
