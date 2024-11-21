@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class GestureDetectorExample extends StatefulWidget {
-  const GestureDetectorExample({super.key});
+class GestureMultiplication extends StatefulWidget {
+  const GestureMultiplication({super.key});
 
   @override
-  State<GestureDetectorExample> createState() => _GestureDetectorExampleState();
+  State<GestureMultiplication> createState() => _GestureMultiplicationState();
 }
 
-class _GestureDetectorExampleState extends State<GestureDetectorExample> {
+class _GestureMultiplicationState extends State<GestureMultiplication> {
   int _first_counter = 0;  // 첫 번째 카운터
   int _second_counter = 0; // 두 번째 카운터
   bool isFirstDoubleTap = false; // 첫 번째 더블탭 여부 추적
