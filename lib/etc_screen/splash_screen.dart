@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:adder/view/bottom_nav_view.dart';
 
+import '../main.dart';
+
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -21,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   // 커스텀 애니메이션이 적용된 Route 생성 함수
   Route _createRoute() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => BottomNavigationBarExample(),
+      pageBuilder: (context, animation, secondaryAnimation) => getIt<MainScreen>(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         // 애니메이션의 시작과 끝 위치
         const begin = Offset(0.0, 1.0); // 오른쪽에서 시작
