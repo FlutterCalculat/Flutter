@@ -1,6 +1,8 @@
 import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../feature/substract_animator.dart';
+
 class SubtractionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,12 +12,7 @@ class SubtractionScreen extends StatelessWidget {
         name: "임금",
         type: "뺄셈",
       ),
-      body: Center(
-        child: Text(
-          'Welcome to the Home Screen!',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      body: SubtractAnimator(),
     );
   }
 }
