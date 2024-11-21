@@ -1,3 +1,4 @@
+import 'package:adder/main.dart';
 import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class SubtractionScreen extends StatelessWidget {
         name: "임금",
         type: "뺄셈",
       ),
-      body: SubtractAnimator(),
+      body: getIt<SubtractAnimator>(),
     );
   }
 }

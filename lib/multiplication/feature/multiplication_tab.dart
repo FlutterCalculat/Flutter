@@ -3,6 +3,8 @@ import 'package:adder/multiplication/feature/gesture_multiplication.dart';
 import 'package:adder/multiplication/feature/rotated_multiplication.dart';
 import 'package:flutter/material.dart';
 
+import '../../main.dart';
+
 
 
 class MultiplicationTab extends StatefulWidget {
@@ -52,10 +54,10 @@ class _MultiplicationTabState extends State<MultiplicationTab> with TickerProvid
   List<Widget> renderChildren() {
     return [
       Container(
-        child: GestureMultiplication()
+        child: getIt<GestureMultiplication>()
       ),
       Container(
-          child: RotatedMultiplication()
+          child: getIt<RotatedMultiplication>()
       )
     ];
   }
