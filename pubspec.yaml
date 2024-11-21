@@ -59,6 +59,18 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: NanumSquareRound
+      fonts:
+        - asset: font/NanumSquareRoundB.ttf
+        - asset: font/NanumSquareRoundEB.ttf
+        - asset: font/NanumSquareRoundL.ttf
+        - asset: font/NanumSquareRoundOTFB.otf
+        - asset: font/NanumSquareRoundOTFEB.otf
+        - asset: font/NanumSquareRoundOTFL.otf
+        - asset: font/NanumSquareRoundOTFR.otf
+        - asset: font/NanumSquareRoundR.ttf
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/
