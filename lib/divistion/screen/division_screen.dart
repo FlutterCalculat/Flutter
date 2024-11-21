@@ -21,6 +21,7 @@ class _DivisionScreenState extends State<DivisionScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(show, style: TextStyle(fontSize: 40),),
             // arr 값을 텍스트로 표시
             Row(
               children: [
@@ -43,22 +44,33 @@ class _DivisionScreenState extends State<DivisionScreen> {
                     Row(
                       children: [
                         NumberButton(number: 7, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 8, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 9, onPressed: makeNumber),
                       ],
                     ),
                     Row(
                       children: [
                         NumberButton(number: 4, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 5, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 6, onPressed: makeNumber),
                       ],
                     ),
                     Row(
                       children: [
                         NumberButton(number: 1, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 2, onPressed: makeNumber),
+                        SizedBox(width: 10,),
                         NumberButton(number: 3, onPressed: makeNumber),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        NumberButton(number: 0, onPressed: makeNumber),
                       ],
                     ),
                   ],
@@ -66,7 +78,14 @@ class _DivisionScreenState extends State<DivisionScreen> {
                 SizedBox(width: 16),
                 Column(
                   children: [
-                    TextButton(
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(90, 40),
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)
+                          )
+                      ),
                       onPressed: () {
                         if (check.isNotEmpty) {
                           setState(() {
@@ -76,13 +95,33 @@ class _DivisionScreenState extends State<DivisionScreen> {
                           });
                         }
                       },
-                      child: Text("/"),
+                      child: Text(
+                        "/",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                    TextButton(
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(90, 40),
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)
+                          )
+                      ),
                       onPressed: calculate,
-                      child: Text("="),
+                      child: Text(
+                        "=",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                    TextButton(
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(90, 40),
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)
+                          )
+                      ),
                       onPressed: () {
                         if (result > 0) {
                           showDialog(
@@ -98,6 +137,7 @@ class _DivisionScreenState extends State<DivisionScreen> {
                       child: Text(
                         "반으로\n나누기",
                         textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
@@ -180,11 +220,20 @@ class NumberButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: () {
         onPressed(number);
       },
-      child: Text(number.toString()),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.grey,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)
+        )
+      ),
+      child: Text(
+        number.toString(),
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }
