@@ -1,3 +1,4 @@
+import 'package:adder/view/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:adder/addition/component/addition_button.dart';
 import 'dart:math';
@@ -51,6 +52,7 @@ class _AdditionScreenState extends State<AdditionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: CustomAppBar(name: "이승혁", type: "덧셉", background: Colors.black),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -59,7 +61,7 @@ class _AdditionScreenState extends State<AdditionScreen> {
             flex: 2,
             child: Container(
               alignment: Alignment.bottomRight,
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
