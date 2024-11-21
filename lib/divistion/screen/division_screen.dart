@@ -78,6 +78,26 @@ class _DivisionScreenState extends State<DivisionScreen> {
                 SizedBox(width: 16),
                 Column(
                   children: [
+                    IconButton(
+                      style: IconButton.styleFrom(
+                        minimumSize: Size(90, 40),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          // `check`와 `show`의 마지막 문자를 제거
+                          if (check.isNotEmpty) {
+                            check = check.substring(0, check.length - 1);
+                          }
+                          if (show.isNotEmpty) {
+                            show = show.substring(0, show.length - 1);
+                          }
+                        });
+                      },
+                      icon: Icon(Icons.backspace),
+                    ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           minimumSize: Size(90, 40),
