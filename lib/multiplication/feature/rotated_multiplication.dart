@@ -10,7 +10,9 @@ class RotatedMultiplication extends StatefulWidget {
 
 class _RotatedMultiplicationState extends State<RotatedMultiplication> {
   int index = 0; // 아이콘이 가리킬 숫자 (0~9)
-  int first = 1;
+  int first = 1; // 초기 값
+  int choice = 0; // 선택 값
+  bool showChoice = false;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,8 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
             ),
             SizedBox(height: 60,),
             Center(
-              child: Text("$first", style: TextStyle(fontSize: 48, color: Colors.black),),
+              child: Text("${text(showChoice)}",
+                style: TextStyle(fontSize: 48, color: Colors.black),),
             ),
             SizedBox(height: 60,),
             Row(
@@ -75,7 +78,7 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
                 OutlinedButton(
                   onPressed: () {
                     setState(() {
-                      index = (index + 1) % 10;// 0~9 사이 값으로 순환
+                      index = (index + 1) % 10; // 0~9 사이 값으로 순환
                     });
                   },
                   child: Text("회전"),
@@ -83,7 +86,22 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
                 OutlinedButton(
                   onPressed: () {
                     setState(() {
-                      first*=index;
+                      if(choice >= 1){
+                        choice = choice * 10 + index;
+                      }else{
+                        choice += index;
+                      }
+                      showChoice = true;
+                    });
+                  },
+                  child: Text("선택"),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    setState(() {
+                      first *= choice;
+                      choice = 0;
+                      showChoice = false;
                     });
                   },
                   child: Text("곱하기"),
@@ -92,6 +110,8 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
                   onPressed: () {
                     setState(() {
                       first = 1;
+                      choice = 0;
+                      showChoice = false;
                     });
                   },
                   child: Text("초기화"),
@@ -103,4 +123,13 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
       ),
     );
   }
+
+  String text(bool show) {
+    if(show){
+      return choice.toString();
+    }else{
+      return first.toString();
+    }
+  }
 }
+
