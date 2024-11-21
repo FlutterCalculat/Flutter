@@ -140,7 +140,9 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
                     OutlinedButton(
                       onPressed: () {
                         setState(() {
-                          choice *= -1;
+                          if(choice > 0){
+                            choice *= -1;
+                          }
                         });
                       },
                       child: Text("음수"),
