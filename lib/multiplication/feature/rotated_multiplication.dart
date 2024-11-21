@@ -72,50 +72,81 @@ class _RotatedMultiplicationState extends State<RotatedMultiplication> {
                 style: TextStyle(fontSize: 48, color: Colors.black),),
             ),
             SizedBox(height: 60,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
               children: [
-                OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      index = (index + 1) % 10; // 0~9 사이 값으로 순환
-                    });
-                  },
-                  child: Text("회전"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          index = (index + 1) % 10; // 0~9 사이 값으로 순환
+                        });
+                      },
+                      child: Text("회전"),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          if(choice >= 1){
+                            choice = choice * 10 + index;
+                          }else{
+                            choice += index;
+                          }
+                          showChoice = true;
+                        });
+                      },
+                      child: Text("선택"),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          first *= choice;
+                          choice = 0;
+                          showChoice = false;
+                        });
+                      },
+                      child: Text("곱하기"),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          first = 1;
+                          choice = 0;
+                          showChoice = false;
+                        });
+                      },
+                      child: Text("초기화"),
+                    ),
+                  ],
                 ),
-                OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      if(choice >= 1){
-                        choice = choice * 10 + index;
-                      }else{
-                        choice += index;
-                      }
-                      showChoice = true;
-                    });
-                  },
-                  child: Text("선택"),
+                SizedBox(
+                  height: 20,
                 ),
-                OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      first *= choice;
-                      choice = 0;
-                      showChoice = false;
-                    });
-                  },
-                  child: Text("곱하기"),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      first = 1;
-                      choice = 0;
-                      showChoice = false;
-                    });
-                  },
-                  child: Text("초기화"),
-                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          choice = choice.abs();
+                        });
+                      },
+                      child: Text("양수"),
+                    ),
+                    SizedBox(
+                      width: 60,
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          choice *= -1;
+                        });
+                      },
+                      child: Text("음수"),
+                    ),
+                  ],
+                )
               ],
             )
           ],
