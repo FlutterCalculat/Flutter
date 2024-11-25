@@ -52,7 +52,7 @@ class _AdditionScreenState extends State<AdditionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: CustomAppBar(name: "이승혁", type: "덧셉", background: Colors.black),
+      appBar: CustomAppBar(name: "이승혁", type: "덧셈", background: Colors.black),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
