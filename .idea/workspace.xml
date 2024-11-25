@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4e34628-9195-4fa9-a8a4-d8654015e1dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundB.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundB.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundEB.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundEB.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundL.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundL.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundOTFB.otf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundOTFB.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundOTFEB.otf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundOTFEB.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundOTFL.otf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundOTFL.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundOTFR.otf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundOTFR.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/NanumSquareRoundR.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundR.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/addition/screen/addition_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/addition/screen/addition_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/divistion/screen/division_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/divistion/screen/division_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/etc_screen/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/etc_screen/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/multiplication/feature/gesture_detector.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/multiplication/screen/multiplication_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/multiplication/screen/multiplication_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/subtraction/screen/subtraction_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/subtraction/screen/subtraction_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/view/bottom_nav_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/view/bottom_nav_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/view/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/view/custom_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2pKsPpwsBikDi8U3dxdbxePi0XC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "subtraction",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/delta/Documents/git/Flutter",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4e34628-9195-4fa9-a8a4-d8654015e1dd" name="Changes" comment="" />
+      <created>1732526079571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732526079571</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,5 +1,6 @@
 
 
+import 'package:adder/main.dart';
 import 'package:flutter/material.dart';
 import 'package:adder/addition/screen/addition_screen.dart';
 import 'package:adder/divistion/screen/division_screen.dart';
@@ -7,24 +8,24 @@ import 'package:adder/multiplication/screen/multiplication_screen.dart';
 import 'package:adder/subtraction/screen/subtraction_screen.dart';
 
 
-class BottomNavigationBarExample extends StatefulWidget {
-  const BottomNavigationBarExample({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() =>
-      _BottomNavigationBarExampleState();
+  State<MainScreen> createState() =>
+      _MainScreenState();
 }
 
-class _BottomNavigationBarExampleState
-    extends State<BottomNavigationBarExample> {
+class _MainScreenState
+    extends State<MainScreen> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    AdditionScreen(),
-    SubtractionScreen(),
-    MultiplicationScreen(),
-    DivisionScreen(),
+    getIt<AdditionScreen>(),
+    getIt<SubtractionScreen>(),
+    getIt<MultiplicationScreen>(),
+    getIt<DivisionScreen>(),
   ];
 
   void _onItemTapped(int index) {
