@@ -61,7 +61,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       '계산기', // 스플래시 화면에 표시할 텍스트 또는 로고
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
                     ),
-                    Icon(Icons.abc, color: Colors.white, size: 60,)
                   ]
               ),
             ),
